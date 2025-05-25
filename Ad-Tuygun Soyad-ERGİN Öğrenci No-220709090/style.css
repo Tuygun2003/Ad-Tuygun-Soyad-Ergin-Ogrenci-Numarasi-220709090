@@ -1,0 +1,339 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#hero {
+  position: relative;
+}
+
+#hero video {
+  height: 100vh;
+  width: 100%;
+  background-position: absolute;
+  z-index: 10;
+  object-fit: cover;
+
+}
+
+#hero .content {
+  background: rgb(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+
+
+
+#hero .content h1 {
+
+
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  /*transform: translateX(50px);*/
+  transform: translateY(-100px);
+}
+
+
+
+
+.login-form {
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 15px;
+  backdrop-filter: drop-shadow(10px 10px 8px blue);
+
+
+}
+
+.login-form img {
+  width: 250px;
+  /* İstediğin kadar büyütebilirsin */
+  height: auto;
+  margin: 0 auto 0 auto;
+  /* Üstten 0, alttan 20px boşluk */
+  display: block;
+  /* Ortalamak için block olmalı */
+  transform: translateY(14px);
+  animation:
+    /* logoanimation 2s ease-in forwards,*/
+    logoanimation2 6s infinite alternate ease-in-out;
+  animation-fill-mode: none;
+  /*animation-delay: 0s, 2s;*/
+}
+
+/*@keyframes logoanimation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}*/
+
+@keyframes logoanimation2 {
+  0% {
+    transform: rotate(0deg)translate(0, 0);
+  }
+
+  15% {
+    transform: rotate(360deg)translate(0, 0);
+  }
+
+  30% {
+    transform: rotate(360deg)translate(0, 0);
+  }
+
+  45% {
+    transform: rotate(360deg)translate(100px, 0px);
+    /* sağa ve aşağı */
+  }
+
+  65% {
+    transform: rotate(360deg)translate(0, 30px);
+    /* sadece aşağı */
+  }
+
+  85% {
+    transform: rotate(360deg)translate(-100px, 0px);
+    /* sola ve aşağı */
+  }
+
+  100% {
+    transform: rotate(360deg)translate(0, 0);
+  }
+}
+
+.formiçibutton {
+
+  height: 40px;
+  /* Yükseklik sabit */
+  padding: 0px 60px;
+  /*Sağdan soldan boşluk,ilki yükseklik boşluk, ikincisi sağdan soldan, ara boşluk*/
+  background-color: beige;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  transform: translateY(5px);
+}
+
+.formiçibutton:hover {
+  background-color: gray;
+
+
+}
+
+#Anabutton2 {
+
+  height: 40px;
+  /* Yükseklik sabit */
+  padding: 0px 60px;
+  /*Sağdan soldan boşluk,ilki yükseklik boşluk, ikincisi sağdan soldan, ara boşluk*/
+  background-color: beige;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  transform: translateY(10px);
+}
+
+#Anabutton2:hover {
+  background-color: gray;
+}
+
+.login-form p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  margin-bottom: 15px;
+  font-size: 40px;
+}
+
+.login-form h1 {
+  z-index: 40;
+  color: aliceblue;
+  margin-bottom: 10px;
+  
+}
+
+.login-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: wheat;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-form button:hover {
+  background-color: gray;
+}
+
+
+
+ .hava-kutusu {
+            position: fixed;
+            top: 165px;
+            right: 10px;
+            padding: 5px;
+            background-color: antiquewhite;
+            border-radius: 5px;
+            max-width: 220px;
+            z-index: 301;
+ }
+  .düzen {
+            position: fixed;
+            top: 5px;
+            right: 10px;
+            background-color: antiquewhite;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            max-width: 200px;
+            z-index: 302;
+          }
+.formiçibuttonselect {
+            margin-top: 5px;
+            width: 100%;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+
+
+.modall {
+       display: none;
+    position: fixed;
+    z-index: 350;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease forwards;
+ }
+
+ .modall-icerikk {
+      background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 12px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+.modall-icerikk button
+{
+ margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+ @keyframes fadeIn {
+    from { background-color: rgba(0,0,0,0); }
+    to { background-color: rgba(0,0,0,0.6); }
+  }
+
+
+
+.modal {
+      display: none; /* Başlangıçta gizli */
+      position: fixed;
+      z-index: 340;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    /* Modal içeriği */
+    .modal-icerik {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 500px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+
+
+.kapat2 {
+  position: absolute;
+  top: 20px;
+  right:20px;
+  font-size: 26px;
+  color: aquamarine;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+    border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  line-height: 40px;
+  text-align: center;
+}
+
+.kapat2:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.2) rotate(90deg);
+}
+
+
+    .kapat {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+.uyarikutusu{
+display:none; 
+background-color: #f8d7da;
+color: #721c24;
+padding: 10px; margin: 10px;
+border-radius: 5px;
+border: 1px solid #f5c6cb;
+text-align:center;
+}

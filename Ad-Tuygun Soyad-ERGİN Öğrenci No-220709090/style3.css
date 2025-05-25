@@ -1,0 +1,284 @@
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('arka plan.png');
+    background-repeat: repeat;
+    background-size: auto;
+    opacity: 0.24; /* Saydamlık seviyesi — daha az dikkat çeker */
+    z-index: -1;   /* Arkada kalır */
+  }
+
+
+.bolum1 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+
+.bolum1 img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.paragraf p{
+
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    transform: translateY(5px);
+}
+
+.yazi1 {
+    flex: 1;
+    margin-left: 30px;
+    box-sizing: border-box;
+}
+
+
+.animasyon-span {
+  position: absolute;
+  display:inline-block;
+  left:150px;
+  top:510px;
+  font-size: 1rem;
+  font-family: Arial;
+  color: #fff;
+  background-color: blue;
+  padding: 8px 12px;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: infinite alternate  gelFade 3s ease-out forwards,  infinite alternate titreme 1.5s ease-in-out;
+  animation-fill-mode: none;
+}
+
+@keyframes gelFade {
+  from{ 
+    transform:scale(0.1);
+    opacity: 0.5;
+   
+  }
+  
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes titreme {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-3px); }
+  66% { transform: translateX(3px); }
+  /*75% { transform: translateX(-10px); }*/
+  100% { transform: translateX(0); }
+}
+
+.sepetekle {
+  position: absolute;
+  display:inline-block;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #fff;
+  background-color:red;
+  padding: 3px 6px;
+  border-radius: 3px;
+  opacity: 1;
+  top:497px ;
+  left:450px ;
+ 
+  /*transform:translate(420px,25px);*/
+  
+  animation: infinite alternate  gelFade 3s ease-out forwards,  infinite alternate titreme2 1.5s ease-in-out;
+  animation-fill-mode: none;
+}
+@keyframes titreme2 {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(3px); }
+  66% { transform: translateX(-3px); }
+  /*75% { transform: translateX(-10px); }*/
+  100% { transform: translateX(0); }
+}
+.yazi1 h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 20px;
+}
+
+.yazi1 h3{
+
+  margin-top: 0;
+  color: #333;
+  font-size: 20px;
+  transform:translate(30px,30px);
+
+}
+
+#pp{
+    display:block;
+    padding-bottom: 5px;
+    position: relative;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+#pp::before {
+content: "";
+position: absolute;
+left:0;
+bottom:0;
+width: 0;
+height: 2px;
+background-color: red;
+transition: width 0.25s ease-out;
+}
+#pp:hover::before
+{
+width: 100%;
+}
+
+
+#ppb {
+  display: inline-block;
+  position: relative;
+  padding: 10px 15px;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  transition: all 0.3s ease;
+  color: #c42e00;
+}
+
+/* Başta görünmez border oluştur */
+#ppb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid red;
+  border-radius: 5px;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* metni tıklanabilir bırak */
+}
+
+/* Hover olunca border belirir */
+#ppb:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.çizgi {
+    border: none;
+    border-top: 2px solid black;
+    margin: 40px 0;
+    transform: translateY(-40px);
+}
+.çizgii {
+    border: none;
+    border-top: 2px solid black;
+    margin: 20px 0;
+}
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  .gallery img {
+    max-width: 65vw;
+    max-height: 65vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 20px;
+  
+   /*width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.3s ease;*/
+}
+  .modal-content img {
+    max-width: 65vw;
+    max-height: 65vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 20px;
+  }
+/* Kapatma butonu */
+  .close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    border-radius: 10%;
+    padding: 5px 10px;
+    z-index:101; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.867);
+    transition: transform 0.2s ease;
+  }
+  .close:hover {
+    transform: scale(1.2);
+  }
+  .nav {
+    position: absolute;
+    top: 50%;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+  }
+  .nav.prev {
+    left: -35px;
+  }
+  .nav.next {
+    right: -35px;
+  }
+/*@media (max-width: 768px) { //Telefon uyumu için.
+    .bolum {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .bolum img {
+        width: 120px;
+        /* Telefonda resmi biraz daha küçült 
+    }
+
+    .yazi h2 {
+        font-size: 20px;
+    }
+
+    .yazi p {
+        font-size: 14px;
+    }
+} */
